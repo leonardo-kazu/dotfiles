@@ -3,16 +3,11 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
-lspconfig.rust_analyser.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {"rust"},
-  root_dir = lspconfig.util.root_pattern("Cargo.toml"),
-  settings = {
-    ['rust-analyzer'] = {
-      cargo = {
-        allFeatures = true,
-      },
-    },
-  },
-})
+local servers = { "eslint", "marksman", "jsonls", "prismals", "tsserver" }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
