@@ -31,7 +31,8 @@ local plugins = {
     dependencies = "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
-        "eslint"
+        "eslint",
+        "black"
       }
     }
   },
@@ -45,7 +46,8 @@ local plugins = {
         "jsonls",
         "prismals",
         "dockerls",
-        "tsserver"
+        "tsserver",
+        "pylsp"
       }
     }
   },
@@ -66,6 +68,10 @@ local plugins = {
     config = function (_, opts)
       require('rust-tools').setup(opts)
     end,
+  },
+  {
+    "prisma/vim-prisma",
+    ft = "prisma",
   }
 }
 

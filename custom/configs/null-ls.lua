@@ -6,7 +6,8 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local formatting = null_ls.builtins.formatting
 
 local sources = {
-  formatting.prettier
+  formatting.prettier,
+  formatting.black
 }
 
 null_ls.setup {
