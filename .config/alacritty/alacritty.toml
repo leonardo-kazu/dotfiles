@@ -1,0 +1,6 @@
+[font.normal]
+family="IosevkaTerm NF"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
